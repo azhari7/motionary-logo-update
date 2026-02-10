@@ -39,14 +39,14 @@ const HeroSection = () => (
             Coba Preview Gratis
           </motion.a>
 
-          <motion.a
-            variants={fadeUp}
-            custom={3}
-            href="#portofolio"
-            className="inline-flex items-center gap-2 mt-10 text-sm text-muted-foreground hover:text-foreground transition-colors block"
-          >
-            <ArrowDown className="h-4 w-4 animate-bounce" /> Scroll untuk lihat hasil nyata
-          </motion.a>
+          <motion.div variants={fadeUp} custom={3} className="mt-10">
+            <a
+              href="#portofolio"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <ArrowDown className="h-4 w-4 animate-bounce" /> Scroll untuk lihat hasil nyata
+            </a>
+          </motion.div>
         </motion.div>
       </div>
     </section>
