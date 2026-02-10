@@ -18,11 +18,11 @@ const HeroSection = () => (
           <motion.h1
             variants={fadeUp}
             custom={0}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-4 uppercase"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1] mb-4 uppercase"
           >
-            Bikin Motion Graphic
+            Bikin Motion Graphic,
             <br />
-            <span className="gradient-text">Secepat Mengetik.</span>
+            <span className="gradient-text">Modal Ngetik.</span>
           </motion.h1>
 
           <motion.p
