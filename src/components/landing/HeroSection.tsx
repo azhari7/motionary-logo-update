@@ -20,7 +20,7 @@ const HeroSection = () => (
           Bikin Motion Graphic{" "}
           <span className="gradient-text">Secepat Mengetik.</span>
           <br />
-          <span className="text-muted-foreground">Sekali Beli, Miliki Selamanya.</span>
+          <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-muted-foreground mt-3 tracking-normal">Sekali Beli, Miliki Selamanya.</span>
         </motion.h1>
 
         <motion.p variants={fadeUp} custom={1} className="text-lg md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
