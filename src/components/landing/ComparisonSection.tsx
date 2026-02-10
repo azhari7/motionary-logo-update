@@ -1,72 +1,57 @@
 import { motion } from "framer-motion";
-import { Globe, Monitor, Check, X } from "lucide-react";
+import { Check, X } from "lucide-react";
+
+const rows = [
+  { feature: "KUALITAS", web: "Rendah (Low-Res)", desktop: "ULTRA HD (4K READY)", webOk: false, desktopOk: true },
+  { feature: "WATERMARK", web: "Ada Watermark", desktop: "BERSIH / TANPA WATERMARK", webOk: false, desktopOk: true },
+  { feature: "RENDERING", web: "Antre Server", desktop: "INSTAN DI HARDWARE ANDA", webOk: false, desktopOk: true },
+  { feature: "AKSES", web: "Harus Internet", desktop: "100% OFFLINE MODE", webOk: false, desktopOk: true },
+  { feature: "BIAYA", web: "Gratis Coba", desktop: "SEKALI BELI (LIFETIME)", webOk: true, desktopOk: true },
+];
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({ opacity: 1, y: 0, transition: { delay: i * 0.1, duration: 0.4 } }),
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-const previewItems = [
-  { text: "Untuk mencoba ide", ok: true },
-  { text: "Durasi pendek", ok: true },
-  { text: "Tidak bisa download", ok: false },
-  { text: "Tanpa render full", ok: false },
-];
-
-const localItems = [
-  { text: "Render video penuh", ok: true },
-  { text: "Tanpa watermark", ok: true },
-  { text: "Kontrol resolusi & durasi", ok: true },
-  { text: "Semua berjalan di komputer lokal", ok: true },
-];
-
 const ComparisonSection = () => (
-  <section className="py-24 border-t border-border">
-    <div className="container mx-auto px-4 max-w-4xl">
+  <section className="py-32">
+    <div className="container mx-auto px-4">
       <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }}>
-        <motion.h2 variants={fadeUp} custom={0} className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          Preview online. Produksi penuh di <span className="gradient-text">komputermu</span>.
+        <motion.h2 variants={fadeUp} className="text-3xl md:text-5xl lg:text-6xl font-bold mb-16 text-center">
+          Web vs Desktop
         </motion.h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          {/* Preview column */}
-          <motion.div variants={fadeUp} custom={1} className="rounded-xl border border-border bg-card p-6">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-10 w-10 rounded-lg bg-muted flex items-center justify-center">
-                <Globe className="h-5 w-5 text-muted-foreground" />
-              </div>
-              <h3 className="font-semibold text-lg">Preview di Landing Page</h3>
-            </div>
-            <div className="space-y-3">
-              {previewItems.map((item, i) => (
-                <div key={i} className="flex items-center gap-2 text-sm">
-                  {item.ok ? <Check className="h-4 w-4 text-primary" /> : <X className="h-4 w-4 text-destructive" />}
-                  <span className="text-muted-foreground">{item.text}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
 
-          {/* Local column */}
-          <motion.div variants={fadeUp} custom={2} className="rounded-xl border-2 border-primary/30 bg-card p-6 relative overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(262_83%_58%/0.04),transparent_70%)]" />
-            <div className="relative">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="h-10 w-10 rounded-lg gradient-bg flex items-center justify-center">
-                  <Monitor className="h-5 w-5 text-primary-foreground" />
-                </div>
-                <h3 className="font-semibold text-lg">Motionary Versi Lokal</h3>
-              </div>
-              <div className="space-y-3">
-                {localItems.map((item, i) => (
-                  <div key={i} className="flex items-center gap-2 text-sm">
-                    <Check className="h-4 w-4 text-primary" />
-                    <span className="text-foreground">{item.text}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        </div>
+        <motion.div variants={fadeUp} className="max-w-4xl mx-auto overflow-x-auto">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="py-4 px-4 text-base font-semibold text-muted-foreground uppercase tracking-wider">Fitur</th>
+                <th className="py-4 px-4 text-base font-semibold text-muted-foreground uppercase tracking-wider">Preview Web (Lite)</th>
+                <th className="py-4 px-4 text-base font-semibold uppercase tracking-wider neon-text">Motionary Desktop (Full)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((r, i) => (
+                <tr key={i} className="border-b border-border/50">
+                  <td className="py-5 px-4 font-bold text-foreground text-base">{r.feature}</td>
+                  <td className="py-5 px-4 text-muted-foreground">
+                    <span className="inline-flex items-center gap-2">
+                      {r.webOk ? <Check className="h-5 w-5 text-primary shrink-0" /> : <X className="h-5 w-5 text-destructive shrink-0" />}
+                      {r.web}
+                    </span>
+                  </td>
+                  <td className="py-5 px-4 font-semibold text-foreground">
+                    <span className="inline-flex items-center gap-2">
+                      <Check className="h-5 w-5 neon-text shrink-0" />
+                      {r.desktop}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </motion.div>
       </motion.div>
     </div>
   </section>

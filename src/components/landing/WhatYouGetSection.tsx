@@ -1,46 +1,45 @@
 import { motion } from "framer-motion";
-import { Check, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Check, Monitor } from "lucide-react";
 
-const BUY_URL = "https://lynk.id/motionary";
-
-const items = [
-  "Akses penuh aplikasi Motionary versi lokal",
-  "Render video tanpa watermark",
-  "Kontrol penuh durasi & resolusi",
-  "Panduan instalasi & penggunaan",
-  "Update (sesuai paket)",
+const checklist = [
+  "Lisensi Permanen Motionary (Windows & Mac)",
+  "Render Video Tanpa Batas Selamanya",
+  "Akses Komunitas Eksklusif & Update Fitur",
 ];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({ opacity: 1, y: 0, transition: { delay: i * 0.08, duration: 0.4 } }),
+  visible: (i: number) => ({ opacity: 1, y: 0, transition: { delay: i * 0.1, duration: 0.4 } }),
 };
 
 const WhatYouGetSection = () => (
-  <section className="py-24 border-t border-border">
-    <div className="container mx-auto px-4 max-w-2xl">
-      <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center">
-        <motion.h2 variants={fadeUp} custom={0} className="text-3xl md:text-4xl font-bold mb-10">
-          Apa yang kamu dapat setelah membeli <span className="gradient-text">Motionary</span>?
-        </motion.h2>
-        <div className="space-y-4 mb-10 text-left max-w-md mx-auto">
-          {items.map((item, i) => (
-            <motion.div key={i} variants={fadeUp} custom={i + 1} className="flex items-center gap-3">
-              <div className="h-6 w-6 rounded-full gradient-bg flex items-center justify-center shrink-0">
-                <Check className="h-3.5 w-3.5 text-primary-foreground" />
+  <section className="py-32">
+    <div className="container mx-auto px-4 max-w-3xl">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="rounded-2xl bg-[hsl(220_50%_12%)] border border-[hsl(220_50%_20%)] p-8 md:p-12"
+      >
+        <motion.div variants={fadeUp} custom={0} className="flex items-center gap-3 mb-8">
+          <Monitor className="h-8 w-8 neon-text" />
+          <h2 className="text-2xl md:text-4xl font-bold uppercase">Apa yang Anda Dapat?</h2>
+        </motion.div>
+
+        <div className="space-y-4 mb-10">
+          {checklist.map((item, i) => (
+            <motion.div key={i} variants={fadeUp} custom={i + 1} className="flex items-start gap-3">
+              <div className="h-6 w-6 rounded-full neon-bg flex items-center justify-center shrink-0 mt-0.5">
+                <Check className="h-3.5 w-3.5 text-[hsl(var(--neon-foreground))]" />
               </div>
-              <span>{item}</span>
+              <span className="text-lg text-foreground">{item}</span>
             </motion.div>
           ))}
         </div>
-        <motion.div variants={fadeUp} custom={6}>
-          <Button size="lg" className="gradient-bg border-0 text-primary-foreground text-base px-10 h-12 glow" asChild>
-            <a href={BUY_URL} target="_blank" rel="noopener noreferrer">
-              Beli Motionary Sekarang <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
-          </Button>
-          <p className="text-xs text-muted-foreground mt-3">Pembelian & download aman melalui lynk.id</p>
+
+        <motion.div variants={fadeUp} custom={4} className="pt-6 border-t border-[hsl(220_50%_20%)]">
+          <p className="text-sm text-muted-foreground uppercase tracking-wider font-semibold mb-2">Spek Minimum</p>
+          <p className="text-muted-foreground">RAM 8GB &nbsp;|&nbsp; Windows 10/11 atau macOS Monterey+</p>
         </motion.div>
       </motion.div>
     </div>
