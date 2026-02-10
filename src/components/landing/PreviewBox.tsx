@@ -51,7 +51,7 @@ const PreviewBox = () => {
             Ubah Ide Jadi Motion. <span className="neon-text">Coba Sekarang.</span>
           </h2>
 
-          <div className="mt-10 rounded-2xl border border-border bg-[hsl(0_0%_7%)] p-6 md:p-8 shadow-2xl" style={{ boxShadow: '0 0 40px -10px hsl(262 83% 65% / 0.15)' }}>
+          <div className="mt-10 rounded-2xl border border-border bg-card p-6 md:p-8 shadow-2xl" style={{ boxShadow: '0 0 40px -10px hsl(262 83% 65% / 0.15)' }}>
             <Textarea
               placeholder={'Contoh:\n"Penjelasan luas segitiga untuk anak SD"\n"Intro video edukasi 10 detik"\n"Highlight fakta unik tentang luar angkasa"'}
               value={prompt}
