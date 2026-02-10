@@ -8,7 +8,7 @@ const fadeUp = {
 
 const HeroSection = () => (
   <section className="relative pt-28 pb-32 overflow-hidden">
-    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(270_70%_55%/0.1),transparent_60%)]" />
+    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(270_70%_55%/0.08),transparent_60%)]" />
 
     <div className="container mx-auto px-4 relative">
       <motion.div className="max-w-5xl mx-auto text-center" initial="hidden" animate="visible">
@@ -41,7 +41,7 @@ const HeroSection = () => (
         <motion.div variants={fadeUp} custom={3} className="mt-16 mx-auto max-w-3xl">
           <div className="rounded-xl border-2 border-border bg-card p-2 shadow-2xl">
             <div className="rounded-lg bg-muted aspect-video flex items-center justify-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,hsl(270_70%_55%/0.08),transparent_70%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,hsl(270_70%_55%/0.05),transparent_70%)]" />
               <div className="flex gap-4 items-center">
                 {[0, 1, 2].map((i) => (
                   <motion.div
