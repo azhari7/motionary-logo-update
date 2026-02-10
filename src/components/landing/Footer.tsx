@@ -1,7 +1,12 @@
+import logoMotionary from "@/assets/logo-motionary.png";
+
 const Footer = () => (
   <footer className="border-t border-border py-10">
     <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-      <span className="text-lg font-bold tracking-widest uppercase">MOTIONARY</span>
+      <a href="/" className="flex items-center gap-2">
+        <img src={logoMotionary} alt="Motionary" className="h-6 w-auto" />
+        <span className="text-lg font-bold tracking-widest uppercase">MOTIONARY</span>
+      </a>
       <div className="flex items-center gap-6 text-sm text-muted-foreground">
         <a href="#portofolio" className="hover:text-foreground transition-colors">Portofolio</a>
         <a href="#tutorial" className="hover:text-foreground transition-colors">Tutorial</a>
