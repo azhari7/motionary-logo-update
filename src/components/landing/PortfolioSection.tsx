@@ -14,7 +14,7 @@ const fadeUp = {
 
 const PortfolioSection = () => (
   <section id="portofolio" className="py-32">
-    <div className="container mx-auto px-4" max-w-3xl text-center>
+    <div className="container mx-auto px-4 max-w-3xl text-center">
       <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-16">
         <motion.h2 variants={fadeUp} custom={0} className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4">
           Hasil Nyata dari <span className="neon-text">Motionary</span>
