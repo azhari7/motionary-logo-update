@@ -35,9 +35,9 @@ const PortfolioSection = () => <section id="portofolio" className="py-32">
       <motion.div initial="hidden" whileInView="visible" viewport={{
       once: true
     }} className="text-center mb-16">
-        <motion.h2 variants={fadeUp} custom={0} className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4">Contoh Hasil Motionary<span className="neon-text">Motionary</span>
+        <motion.h2 variants={fadeUp} custom={0} className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4">Contoh Hasil <span className="gradient-text">Motionary</span>
         </motion.h2>
-        <motion.p variants={fadeUp} custom={1} className="text-lg text-muted-foreground">Lihat apa yang bisa Anda buat dalam hitungan detik. </motion.p>
+        <motion.p variants={fadeUp} custom={1} className="text-lg text-muted-foreground">Lihat apa yang bisa Anda buat dalam hitungan detik. </motion.p>
       </motion.div>
 
       <motion.div initial="hidden" whileInView="visible" viewport={{
