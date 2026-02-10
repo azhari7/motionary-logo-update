@@ -49,7 +49,7 @@ const ComparisonSection = () => <section className="py-32">
       <motion.div initial="hidden" whileInView="visible" viewport={{
       once: true
     }}>
-        <motion.h2 variants={fadeUp} className="text-3xl md:text-5xl lg:text-6xl font-bold mb-16 text-center">AI Generator vs Motionary vs Edit manual</motion.h2>
+        <motion.h2 variants={fadeUp} className="text-3xl md:text-5xl lg:text-6xl font-bold mb-16 text-center">AI Generator vs <span className="neon-text">Motionary</span> vs Edit manual</motion.h2>
 
         <motion.div variants={fadeUp} className="max-w-4xl mx-auto overflow-x-auto">
           <table className="w-full text-left border-collapse">
