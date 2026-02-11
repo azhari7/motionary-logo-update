@@ -65,7 +65,7 @@ const ComparisonSection = () => <section className="py-32">
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="border-b border-border">
-                <th className="py-4 px-4 text-base font-semibold text-muted-foreground uppercase tracking-wider">Fitur</th>
+                <th className="py-4 px-4 text-base font-semibold text-muted-foreground uppercase tracking-wider">Benchmarking</th>
                 <th className="py-4 px-4 text-base font-semibold text-muted-foreground uppercase tracking-wider">AI Generator</th>
                 <th className="py-4 px-4 text-base font-semibold uppercase tracking-wider neon-text">Motionary Desktop (Full)</th>
                 <th className="py-4 px-4 text-base font-semibold text-muted-foreground uppercase tracking-wider">Edit Manual</th>
