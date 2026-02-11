@@ -6,6 +6,7 @@ import ComparisonSection from "@/components/landing/ComparisonSection";
 import ValueSection from "@/components/landing/ValueSection";
 import TutorialSection from "@/components/landing/TutorialSection";
 import WorkflowSection from "@/components/landing/WorkflowSection";
+import PricingSection from "@/components/landing/PricingSection";
 import WhatYouGetSection from "@/components/landing/WhatYouGetSection";
 import FaqSection from "@/components/landing/FaqSection";
 import FinalCtaSection from "@/components/landing/FinalCtaSection";
@@ -22,6 +23,7 @@ const Index = () => {
       <ValueSection />
       <TutorialSection />
       <WorkflowSection />
+      <PricingSection />
       <WhatYouGetSection />
       <FaqSection />
       <FinalCtaSection />
