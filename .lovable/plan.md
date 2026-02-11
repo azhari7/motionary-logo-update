@@ -1,21 +1,38 @@
 
 
-## Update FAQ Section
+## Tambah Section Harga Motionary
 
-Mengganti seluruh konten FAQ dari 3 pertanyaan menjadi 20 pertanyaan lengkap sesuai konten yang diberikan, plus menambahkan CTA di bawah FAQ.
+Membuat section pricing baru (`PricingSection`) dan menempatkannya setelah WorkflowSection dan sebelum FaqSection.
 
 ### Perubahan
 
-**File: `src/components/landing/FaqSection.tsx`**
+**File baru: `src/components/landing/PricingSection.tsx`**
 
-- Ganti array `faqs` dari 3 item menjadi 20 item dengan pertanyaan dan jawaban lengkap
-- Jawaban yang berisi list/poin akan diformat menggunakan elemen HTML (paragraf dan list) agar rapi
-- Tambahkan CTA section di bawah accordion FAQ dengan teks "Siap ubah ide jadi motion tanpa ribet?" dan tombol beli yang mengarah ke link Lynk.id
+- Section dengan headline "Sekali Beli. Miliki Selamanya." dan subheadline tentang bukan langganan
+- Price card utama dengan:
+  - Judul "Motionary -- Lifetime License"
+  - Harga coret Rp200.000 dan harga aktif Rp100.000
+  - Micro-copy "Diskon waktu terbatas"
+  - 7 highlight checklist (lifetime, render tanpa batas, tanpa watermark, dll)
+  - CTA utama "Beli Motionary Sekarang" (link ke lynk.id/motionary)
+  - CTA sekunder "Tanya Dulu di Komunitas"
+  - Trust copy: "Ragu sebelum beli? Kamu bisa tanya dulu di Telegram atau Discord Motionary."
+- 3 badge kecil di bawah card: "Diskon Terbatas", "Best Value for Creators", "Local Desktop Tool"
+- Animasi entrance menggunakan framer-motion (konsisten dengan section lain)
+- Styling menggunakan neon-text, neon-bg, neon-glow yang sudah ada
+
+**File diedit: `src/pages/Index.tsx`**
+
+- Import PricingSection
+- Sisipkan `<PricingSection />` setelah `<WorkflowSection />` dan sebelum `<WhatYouGetSection />`
 
 ### Detail Teknis
 
-- Struktur data `faqs` diubah agar field `a` (answer) berupa JSX/ReactNode, bukan string biasa, supaya bisa menampilkan list dan paragraf dengan format yang benar
-- Menggunakan `<ul>` dengan styling Tailwind untuk list items
-- CTA button menggunakan style yang konsisten dengan tombol CTA lain di landing page (gradient neon, link ke BUY_URL)
-- Semua 20 FAQ ditampilkan dalam satu Accordion collapsible
+- Price card menggunakan border gradient dan shadow untuk tampilan premium
+- Harga coret menggunakan `line-through` pada Rp200.000
+- Checklist menggunakan icon Check dari lucide-react
+- CTA utama menggunakan class neon-bg + neon-glow (sama seperti CTA di section lain)
+- CTA sekunder menggunakan style outline/ghost
+- Badge menggunakan komponen Badge atau div kecil dengan styling rounded-full
+- Layout responsive: card centered di max-w-lg, badge grid di bawahnya
 
