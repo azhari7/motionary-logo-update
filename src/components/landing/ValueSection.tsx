@@ -48,8 +48,8 @@ const ValueSection = () => <section className="py-32">
       <motion.div initial="hidden" whileInView="visible" viewport={{
       once: true
     }} className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-        {cards.map((c, i) => <motion.div key={i} variants={fadeUp} custom={i} className="rounded-2xl border border-border bg-card p-8 hover:border-primary/30 transition-colors pt-0">
-            <c.icon className="h-10 w-10 neon-text mb-5" />
+        {cards.map((c, i) => <motion.div key={i} variants={fadeUp} custom={i} className="rounded-2xl border border-border bg-card px-8 py-10 hover:border-primary/30 transition-colors text-center">
+            <c.icon className="h-10 w-10 neon-text mb-5 mx-auto" />
             <h3 className="text-xl font-bold mb-3 uppercase tracking-wide">{c.title}</h3>
             <p className="text-muted-foreground leading-relaxed">{c.desc}</p>
           </motion.div>)}
