@@ -4,32 +4,42 @@ const rows = [{
   feature: "KUALITAS",
   web: "Rendah (Low-Res)",
   desktop: "ULTRA HD (4K READY)",
+  manual: "Tergantung Skill",
   webOk: false,
-  desktopOk: true
+  desktopOk: true,
+  manualOk: false
 }, {
   feature: "WATERMARK",
   web: "Ada Watermark",
   desktop: "BERSIH / TANPA WATERMARK",
+  manual: "Tanpa Watermark",
   webOk: false,
-  desktopOk: true
+  desktopOk: true,
+  manualOk: true
 }, {
   feature: "RENDERING",
   web: "Antre Server",
   desktop: "INSTAN DI HARDWARE ANDA",
+  manual: "Lama (Berjam-jam)",
   webOk: false,
-  desktopOk: true
+  desktopOk: true,
+  manualOk: false
 }, {
   feature: "AKSES",
   web: "Harus Internet",
   desktop: "100% OFFLINE MODE",
+  manual: "Offline (Software Berat)",
   webOk: false,
-  desktopOk: true
+  desktopOk: true,
+  manualOk: false
 }, {
   feature: "BIAYA",
   web: "Gratis Coba",
   desktop: "SEKALI BELI (LIFETIME)",
+  manual: "Langganan Mahal",
   webOk: true,
-  desktopOk: true
+  desktopOk: true,
+  manualOk: false
 }];
 const fadeUp = {
   hidden: {
@@ -58,6 +68,7 @@ const ComparisonSection = () => <section className="py-32">
                 <th className="py-4 px-4 text-base font-semibold text-muted-foreground uppercase tracking-wider">Fitur</th>
                 <th className="py-4 px-4 text-base font-semibold text-muted-foreground uppercase tracking-wider">Preview Web (Lite)</th>
                 <th className="py-4 px-4 text-base font-semibold uppercase tracking-wider neon-text">Motionary Desktop (Full)</th>
+                <th className="py-4 px-4 text-base font-semibold text-muted-foreground uppercase tracking-wider">Edit Manual</th>
               </tr>
             </thead>
             <tbody>
@@ -73,6 +84,12 @@ const ComparisonSection = () => <section className="py-32">
                     <span className="inline-flex items-center gap-2">
                       <Check className="h-5 w-5 neon-text shrink-0" />
                       {r.desktop}
+                    </span>
+                  </td>
+                  <td className="py-5 px-4 text-muted-foreground">
+                    <span className="inline-flex items-center gap-2">
+                      {r.manualOk ? <Check className="h-5 w-5 text-primary shrink-0" /> : <X className="h-5 w-5 text-destructive shrink-0" />}
+                      {r.manual}
                     </span>
                   </td>
                 </tr>)}
