@@ -50,9 +50,9 @@ const WorkflowSection = () => (
         <motion.h2
           variants={fadeUp}
           custom={0}
-          className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4"
+          className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 text-center"
         >
-          Workflow <span className="neon-text">Motionary</span> di Komputer Lokal
+          Cara Pakai <span className="neon-text">Motionary</span> di Komputer Lokal
         </motion.h2>
         <motion.p
           variants={fadeUp}
