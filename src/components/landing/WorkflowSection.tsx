@@ -112,16 +112,19 @@ const WorkflowSection = () => (
           </div>
         </motion.div>
 
-        {/* Soft CTA */}
+        {/* CTA */}
         <motion.div variants={fadeUp} custom={7} className="mt-10 text-center">
-          <Button
-            variant="outline"
-            size="lg"
-            className="border-primary/40 hover:bg-primary/5"
-            onClick={() => document.getElementById("sandbox")?.scrollIntoView({ behavior: "smooth" })}
+          <p className="text-muted-foreground text-lg mb-6 max-w-xl mx-auto">
+            Jangan biarkan ide menguap. Ubah prompt jadi video tanpa antre—Mulai render di Motionary sekarang!
+          </p>
+          <a
+            href="https://lynk.id/motionary"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-10 py-4 rounded-xl text-lg font-bold uppercase neon-bg text-[hsl(var(--neon-foreground))] neon-glow transition-transform hover:scale-105"
           >
-            👉 Coba preview ide di atas, lalu render versi penuhnya di Motionary
-          </Button>
+            MULAI RENDER SEKARANG
+          </a>
         </motion.div>
       </motion.div>
     </div>
