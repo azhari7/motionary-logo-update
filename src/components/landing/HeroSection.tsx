@@ -39,12 +39,12 @@ const HeroSection = () => <>
         {/* Bottom: CTA + Scroll hint pinned to bottom */}
         <motion.div className="text-center" initial="hidden" animate="visible">
           <motion.a variants={fadeUp} custom={3} href="#sandbox" className="inline-flex items-center px-10 py-4 rounded-xl text-lg font-bold uppercase neon-bg neon-glow transition-transform hover:scale-105">
-            Coba Preview Gratis
+            Lihat Contoh Motionary
           </motion.a>
 
           <motion.div variants={fadeUp} custom={4} className="mt-6">
             <a href="#portofolio" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-              <ArrowDown className="h-4 w-4 animate-bounce" /> Scroll untuk coba ide mu jadi nyata (preview)        
+              <ArrowDown className="h-4 w-4 animate-bounce" /> Scroll untuk melihat workflow & hasil preview        
             </a>
           </motion.div>
         </motion.div>
