@@ -47,7 +47,7 @@ const ValueSection = () => (
             key={i}
             variants={fadeUp}
             custom={i}
-            className="rounded-2xl border border-border bg-card p-8 hover:border-primary/30 transition-colors text-center"
+            className="rounded-2xl border border-border bg-card px-8 py-10 hover:border-primary/30 transition-colors text-center"
           >
             <c.icon className="h-10 w-10 neon-text mb-5 mx-auto" />
             <h3 className="text-xl font-bold mb-3 uppercase tracking-wide">{c.title}</h3>
