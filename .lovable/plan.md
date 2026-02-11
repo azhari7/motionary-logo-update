@@ -1,40 +1,21 @@
 
 
-## New Section: Cara Pakai Motionary (Versi Install Lokal)
+## Update FAQ Section
 
-Create a new `WorkflowSection.tsx` component and place it between TutorialSection and WhatYouGetSection in the page layout.
+Mengganti seluruh konten FAQ dari 3 pertanyaan menjadi 20 pertanyaan lengkap sesuai konten yang diberikan, plus menambahkan CTA di bawah FAQ.
 
-### Design
+### Perubahan
 
-The section will feature:
-- Headline + subheadline at the top
-- A vertical 3-step timeline with numbered circles connected by a line
-- Each step has a title, description, and bullet points
-- A highlight box below the steps with 4 key benefits
-- A soft CTA button at the bottom
+**File: `src/components/landing/FaqSection.tsx`**
 
-### Changes
+- Ganti array `faqs` dari 3 item menjadi 20 item dengan pertanyaan dan jawaban lengkap
+- Jawaban yang berisi list/poin akan diformat menggunakan elemen HTML (paragraf dan list) agar rapi
+- Tambahkan CTA section di bawah accordion FAQ dengan teks "Siap ubah ide jadi motion tanpa ribet?" dan tombol beli yang mengarah ke link Lynk.id
 
-**New file: `src/components/landing/WorkflowSection.tsx`**
+### Detail Teknis
 
-- Uses framer-motion for scroll-triggered fade-up animations (matching existing section patterns)
-- 3-step vertical timeline layout:
-  1. "Generate kode TSX dengan AI" -- with sub-bullets about prompt and output
-  2. "Paste kode ke Studio Editor" -- with sub-bullets about editing capabilities
-  3. "Preview & render di Remotion Studio" -- with sub-bullets about resolution, watermark, hardware
-- Highlight box styled with `bg-gradient-to-br from-primary/5 to-accent/5 border border-primary/20` (same pattern as WhatYouGetSection)
-- Soft CTA linking to the sandbox section (`#sandbox`)
-- Uses neon-text class for brand-colored accents
+- Struktur data `faqs` diubah agar field `a` (answer) berupa JSX/ReactNode, bukan string biasa, supaya bisa menampilkan list dan paragraf dengan format yang benar
+- Menggunakan `<ul>` dengan styling Tailwind untuk list items
+- CTA button menggunakan style yang konsisten dengan tombol CTA lain di landing page (gradient neon, link ke BUY_URL)
+- Semua 20 FAQ ditampilkan dalam satu Accordion collapsible
 
-**File: `src/pages/Index.tsx`**
-
-- Import WorkflowSection
-- Place it after `<TutorialSection />` and before `<WhatYouGetSection />`
-
-### Technical Details
-
-- Timeline uses a vertical line (`border-l-2 border-primary/30`) with numbered circles (`rounded-full neon-bg`) for each step
-- Each step animates in with staggered delays using framer-motion `whileInView`
-- Highlight box uses a grid of 4 benefit items with Check icons
-- CTA button scrolls to the `#sandbox` section
-- Fully responsive: stacks cleanly on mobile with proper spacing
