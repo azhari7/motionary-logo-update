@@ -1,24 +1,27 @@
 import { motion } from "framer-motion";
-import { Zap, ShieldCheck, CreditCard, Infinity } from "lucide-react";
+import gpuImg from "@/assets/value-gpu.png";
+import privacyImg from "@/assets/value-privacy.png";
+import paymentImg from "@/assets/value-payment.png";
+import unlimitedImg from "@/assets/value-unlimited.png";
 
 const cards = [
   {
-    icon: Zap,
+    img: gpuImg,
     title: "KECEPATAN GPU",
     desc: "Gunakan tenaga asli kartu grafis Anda. Rendering 10x lebih cepat dibanding cloud.",
   },
   {
-    icon: ShieldCheck,
+    img: privacyImg,
     title: "PRIVASI MUTLAK",
     desc: "Proyek Anda rahasia. Tidak ada data yang keluar dari komputer Anda.",
   },
   {
-    icon: CreditCard,
+    img: paymentImg,
     title: "ONE-TIME PAYMENT",
     desc: "Stop langganan bulanan. Bayar sekali, pakai sampai kiamat.",
   },
   {
-    icon: Infinity,
+    img: unlimitedImg,
     title: "UNLIMITED RENDER",
     desc: "Ekspor 1 atau 1.000 video per hari? Biayanya tetap Rp 0.",
   },
@@ -49,7 +52,7 @@ const ValueSection = () => (
             custom={i}
             className="rounded-2xl border border-border bg-card p-8 hover:border-primary/30 transition-colors"
           >
-            <c.icon className="h-10 w-10 neon-text mb-5" />
+            <img src={c.img} alt={c.title} className="h-16 w-16 object-contain mb-5" />
             <h3 className="text-xl font-bold mb-3 uppercase tracking-wide">{c.title}</h3>
             <p className="text-muted-foreground leading-relaxed">{c.desc}</p>
           </motion.div>
